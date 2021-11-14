@@ -1,0 +1,108 @@
+{% extends 'app/base.html' %}
+{% block Content %}
+<h3 class="header-l center-text">
+        Cart
+    </h3>
+    <div class="cart-main">
+        <div class="cart-products-holder">
+            <div class="sub-cards-holder">
+                <div class="cart-product">
+                    <div class="cart-product-img">
+                        <a href="">
+                            <img src="https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/fc0fed9bdb3f4a0bb7aaace8008d0b06_9366/juventus-21-22-home-jersey.jpg" alt="">
+                        </a>
+                        <a href="" class="pr-remove-btn"><i class="far fa-trash-alt"></i> Remove</a>
+                    </div>
+                    <div class="cart-desc-wrapper">
+                        <span class="cart-pr-title">
+                           <a href=""> Lorem ipsum dolor sit amet consectetur adipisicing elit.</a>
+                           
+                        </span>
+                        <span class="cart-pr-price" style="color: rgb(41, 152, 226); font-weight: 600;">
+                            <strong style="color: black;">Price : </strong>$600 
+                        </span>
+                        <span class="quantity-form">
+                            <label for="pr-quantity">Quantity : </label><input type="number" name="" id="">
+                        </span>
+                    </div>
+                </div>
+                <div class="cart-product">
+                    <div class="cart-product-img">
+                        <a href="">
+                            <img src="https://vlebazaar.in/image/cache/catalog//B07X1KT6MR/Mi-10-Coral-Green-8GB-RAM-128GB-Storage-108MP-Quad-Camera-SD-865-Processor-5G-Ready-B07X1KT6MR-12-1000x1000w.jpg" alt="">
+                        </a>
+                        <a href="" class="pr-remove-btn"><i class="far fa-trash-alt"></i> Remove</a>
+                    </div>
+                    <div class="cart-desc-wrapper">
+                        <span class="cart-pr-title">
+                           <a href=""> Lorem ipsum dolor sit amet consectetur adipisicing elit.</a>
+                           
+                        </span>
+                        <span class="cart-pr-price" style="color: rgb(41, 152, 226); font-weight: 600;">
+                            <strong style="color: black;">Price : </strong>$600 
+                        </span>
+                        <span class="quantity-form">
+                            <label for="pr-quantity">Quantity : </label><input type="number" name="" id="">
+                        </span>
+                    </div>
+                </div>
+                <div class="cart-product">
+                    <div class="cart-product-img">
+                        <a href="">
+                            <img src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/09591714-2a39-4f91-a9a5-caf8f1b2ef70/custom-nike-blazer-77-cozi-by-you.png" alt="">
+                        </a>
+                        <a href="" class="pr-remove-btn"><i class="far fa-trash-alt"></i> Remove</a>
+                    </div>
+                    <div class="cart-desc-wrapper">
+                        <span class="cart-pr-title">
+                           <a href=""> Lorem ipsum dolor sit amet consectetur adipisicing elit.</a>
+                           
+                        </span>
+                        <span class="cart-pr-price" style="color: rgb(41, 152, 226); font-weight: 600;">
+                            <strong style="color: black;">Price : </strong>$600 
+                        </span>
+                        <span class="quantity-form">
+                            <label for="pr-quantity">Quantity : </label><input type="number" name="" id="">
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="cart-billing">
+            <div class="total-bill">
+                <h6 class = "order-val sm-subhead">
+                    <span class="tags">Order-value :</span>
+                    <span class="tags-price">900$</span>
+                </h6>
+                <h6 class = "discount sm-subhead">
+                    <span class="tags">Discount :</span>
+                    <span class="dis-tags-price">-100$</span>
+                </h6>
+                <h6 class = "dil-charge sm-subhead">
+                    <span class="tags">Dilevery-charge : </span>
+                    <span class="tags-price">40$</span>
+                </h6>
+                <h6 class = "cart-total sm-subhead">
+                    <span class="tags total-value">Total : </span>
+                    <span class="tags-price">840$</span>
+                </h6>
+
+            </div>
+            <form action="" class="checkout">
+                <div class="cart-coupon">
+                    <input type="text" placeholder="Apply a coupon">
+                    <input type="button" value="Apply">
+                </div>
+                <button class="block-checkout-btn">
+                    Proceed to Checkout
+                </button>
+
+
+            </form>
+        </div>
+    </div>
+
+
+{% endblock Content %}
+

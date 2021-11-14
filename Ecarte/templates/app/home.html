@@ -1,0 +1,215 @@
+{% extends 'app/base.html' %}
+
+
+{% load static %}
+
+{% block title %}
+Home
+{% endblock title %}
+{% block Content %}
+    <div class="main-carousel">
+        <span class="carousel-controler" id="scroll-left"><i class="fas fa-angle-left"></i></span>
+        <span class="carousel-controler" id="scroll-right"><i class="fas fa-angle-right"></i></span>
+        <div class="inner-carousel-frame" id="slider-frame">
+            <div class="img-container">
+                <img src="{% static 'images/carouselimg01.jpg'%}" alt="" class="carousel-image">
+                <div class="ca-maincontentContainer animatedText">
+                    <span class="related-content">
+                        Amazing collection of Men's shoes.
+                    </span>
+                    <a href="" class="related-link">
+                        Shop Now
+                    </a>
+                </div>
+            </div>
+            <div class="img-container">
+                <img src="{% static 'images/carouselimg02.jpg'%}" alt="" class="carousel-image">
+                <div class="ca-maincontentContainer">
+                    <span class="related-content">
+                        Amazing collection of Men's jeans.
+                    </span>
+                    <a href="" class="related-link">
+                        Shop Now
+                    </a>
+                </div>
+            </div>
+            <div class="img-container">
+                <img src="{% static 'images/carouselimg03.jpg'%}" alt="" class="carousel-image">
+                <div class="ca-maincontentContainer">
+                    <span class="related-content">
+                        Your favourite Macbook. Get now
+                    </span>
+                    <a href="" class="related-link">
+                        Shop Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="categories">
+        <div class="category-items-container">
+            <a href="" class="category-item">
+                <span class="category-imageholder">
+                    <img src="{% static 'icons/coupon.svg'%}" alt="">
+                </span>
+                <span class="category-name">
+                    Offer
+                </span>
+            </a>    
+        </div>
+        <div class="category-items-container">
+            <a href="" class="category-item">
+                <span class="category-imageholder">
+                    <img src="{% static 'icons/laptop.svg'%}" alt="">
+                </span>
+                <span class="category-name">
+                    Electronic
+                </span>
+            </a>
+        </div>
+        <div class="category-items-container">
+            <a href="" class="category-item">
+                <span class="category-imageholder">
+                    <img src="{% static 'icons/dress.svg'%}" alt="">
+                </span>
+                <span class="category-name">
+                    Fashion
+                </span>
+            </a>
+        </div>
+        <div class="category-items-container">
+            <a href="" class="category-item">
+                <span class="category-imageholder">
+                    <img src="{% static 'icons/smartphone.svg'%}" alt="">
+                </span>
+                <span class="category-name">
+                    Smartphone
+                </span>
+            </a>
+        </div>
+        <div class="category-items-container">
+            <a href="" class="category-item">
+                <span class="category-imageholder">
+                    <img src="{% static 'icons/laptop.svg'%}" alt="">
+                </span>
+                <span class="category-name">
+                    Laptop
+                </span>
+            </a>
+        </div>
+    </div>
+    <h3 class="header-l center-text">
+        New arrivals for your cart.
+    </h3>
+    <div class="cards-wrapper">
+        <a href = ''class="flex-cards-l">
+            <div class= "card-image">
+                <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/de02328e-60ea-497c-ba05-3ab35e9a27df/sport-clash-training-hoodie-R0CGhq.png" alt="">
+            </div>
+            <div class="card-text">
+                <span class="card-desc center-text">
+                    Lorem ipsum dolor sit amet.
+                </span>
+                <span class="card-price center-text">
+                    $456
+                </span>
+            </div>
+
+        </a>
+        <a href = ''class="flex-cards-l">
+            <div class= "card-image">
+                <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/e7f6d173-d141-4891-9208-c7d5aef72b75/nets-icon-edition-2020-nba-swingman-jersey-G8mPVr.png" alt="">
+            </div>
+            <div class="card-text">
+                <span class="card-desc center-text">
+                    Lorem ipsum dolor sit amet.
+                </span>
+                <span class="card-price center-text">
+                    $456
+                </span>
+            </div>
+
+        </a>
+        <a href = ''class="flex-cards-l">
+            <div class= "card-image">
+                <img src="https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/fc0fed9bdb3f4a0bb7aaace8008d0b06_9366/juventus-21-22-home-jersey.jpg" alt="">
+            </div>
+            <div class="card-text">
+                <span class="card-desc center-text">
+                    Lorem ipsum dolor sit amet.
+                </span>
+                <span class="card-price center-text">
+                    $456
+                </span>
+            </div>
+
+        </a>
+        <a href = ''class="flex-cards-l">
+            <div class= "card-image">
+                <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/640594c9-288b-4569-bfc0-6a5472cc912b/polo-liverpool-fc-slim-fit-polo-mjX7Tf.png" alt="">
+            </div>
+            <div class="card-text">
+                <span class="card-desc center-text">
+                    Lorem ipsum dolor sit amet.
+                </span>
+                <span class="card-price center-text">
+                    $456
+                </span>
+            </div>
+        </a>
+    </div>
+    <h4 class="header-l center-text">
+        Deals of this week.
+    </h4>
+    <div class="card-wrapper">
+        <div class="sub-container-wrapper">
+            <div class="grid-display-cards">
+                <div class="img-holders long-item">
+                    <img src="{% static 'images/long-gridimg.jpg'%}" alt="">
+                </div>
+                <div class="img-holders">
+                    <img src="{% static 'images/gridimg1a.jpg'%}" alt="">
+                </div>
+                <div class="img-holders">
+                    <img src="{% static 'images/gridimg1b.jpg'%}" alt="">
+                </div>
+                <a href="" class="link-anchor">Shoes</a>
+            </div>
+            <div class="grid-display-cards">
+                <div class="img-holders long-item">
+                    <img src="{% static 'images/long-gridimg2.jpg'%}" alt="">
+                </div>
+                <div class="img-holders">
+                    <img src="{% static 'images/gridimg2a.jpg'%}" alt="">
+                </div>
+                <div class="img-holders">
+                    <img src="{% static 'images/gridimg2b.jpg'%}" alt="">
+                </div>
+                <a href="" class="link-anchor">Jackets</a>
+            </div>
+            <div class="grid-display-cards">
+                <div class="img-holders long-item">
+                    <img src="{% static 'images/long-gridimg3.jpg'%}" alt="">
+                </div>
+                <div class="img-holders">
+                    <img src="{% static 'images/gridimg3a.jpg'%}" alt="">
+                </div>
+                <div class="img-holders">
+                    <img src="{% static 'images/gridimg3b.jpg'%}" alt="">
+                </div>
+                <a href="" class="link-anchor">Jeans</a>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+{% endblock Content %}
+
+
+
+
+

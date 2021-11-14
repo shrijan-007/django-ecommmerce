@@ -1,0 +1,98 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}
+{% block prtitle %}
+
+{% endblock prtitle %}
+{% endblock title %}
+{% block Content %}
+<h2 class="Product-header-title">
+        {% block prheadertitle %}
+        
+        {% endblock prheadertitle %}
+</h2>
+<div class="main-pr-page">
+<div class="images-display">
+            <div class="pr-image-album">
+                {% block albumImages %}
+                
+                {% endblock albumImages %}
+            </div>
+            <div class="show-image">
+                {% block mainImage %}
+                
+                {% endblock mainImage %}
+            </div>            
+</div>
+<div class="description-wrapper">
+            <div class="pr-price-bar">
+                <span class="sell-price">Price : {% block SP %}{% endblock SP %} <i class="fas fa-rupee-sign"></i></span>
+                <span class="MRP-price"><strike style="color: rgb(245, 39, 24);">{% block MRP %}{% endblock MRP %}</strike>&nbsp;<i
+                        class="fas fa-rupee-sign"></i></span>
+            </div>
+            {% block colors %}
+            
+            {% endblock colors %}
+            {% block varients %}
+            
+            {% endblock varients %}
+            <div class="pr-button-group">
+                {% block btngrp %}
+                
+                {% endblock btngrp %}
+            </div>
+
+        </div>
+</div>
+
+<h2 class="Product-header-title" style="text-align: center;">
+        Description
+    </h2>
+    <div class="ellaborative-desc">
+        {% block prDescription %}
+        
+        {% endblock prDescription %}
+    </div>
+
+<h2 class="Product-header-title" style="text-align: center; font-weight:700; ">
+        Available Offers
+    </h2>
+    <div class="ellaborative-desc">
+        <ul class="offers-column">
+            <li>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quibusdam obcaecati inventore?
+            </li>
+            <li>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quibusdam obcaecati inventore?
+            </li>
+            <li>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quibusdam obcaecati inventore?
+            </li>
+            <li>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quibusdam obcaecati inventore?
+            </li>
+        </ul>
+    </div>
+    <h4 class="header-l center-text">
+        You can pay via
+    </h4>
+    <div class="pay-modes">
+        <span class="image-holder">
+            <img src="{% static 'icons/mastercard.png' %}" alt="">
+        </span>
+        <span class="image-holder">
+            <img src="{% static 'icons/visa.png' %}" alt="">
+        </span>
+        <span class="image-holder">
+            <img src="{% static 'icons/rupay.png' %}" alt="">
+        </span>
+        <span class="image-holder">
+            <img src="{% static 'icons/upi.png' %}" alt="">
+        </span> 
+        <span class="image-holder">
+            <img src = "{% static 'icons/cod.png' %}" alt="">
+        </span>
+    </div>
+
+{% endblock Content %}
+

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecarte | {% block title %}{% endblock title %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'CSS/base.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+
+</head>
+<body>
+    <header id="page-header">
+        <nav id="block-navigation" class="navbar">
+            <div id="navlogo" class="nav-section">
+                <img src="{% static 'icons/logo.svg'%}" alt="">
+                <span id="logoname"><a href="/">Ecarte</a></span>
+            </div>
+            <div id="navbar-link" class="nav-section">
+                <ul id="nav-link-list">
+                    <li class="navlinks"><span href="" class="nav-hover-links"><i class="fas fa-tshirt"></i> Clothing
+                            <div class="main-largedrpdown" id="clothing-drp-down">
+                                <div class="sub-categories">
+                                    <h3 class="sub-categories-heading">
+                                        Men's
+                                    </h3>
+                                    <ul class="categories-list">
+                                        <li><a href="collection/shirt">Shirts</a></li>
+                                        <li><a href="collection/shirt">Jeans</a></li>
+                                        <li><a href="collection/shirt">Shoes</a></li>
+                                        <li><a href="collection/shirt">T-shirts</a></li>
+                                        <li><a href="collection/shirt">Trousers</a></li>
+                                    </ul>
+                                </div>
+                                <div class="sub-categories">
+                                    <h3 class="sub-categories-heading">
+                                        Ladies
+                                    </h3>
+                                    <ul class="categories-list">
+                                        <li><a href="">Tops</a></li>
+                                        <li><a href="">Jeans</a></li>
+                                        <li><a href="">Footwear</a></li>
+                                        <li><a href="">Skirts</a></li>
+                                        <li><a href="">Something</a></li>
+                                    </ul>
+                                </div>
+                                <div class="sub-categories">
+                                    <h3 class="sub-categories-heading">
+                                        Kids
+                                    </h3>
+                                    <ul class="categories-list">
+                                        <li><a href="">Dresses</a></li>
+                                        <li><a href="">T-shirts</a></li>
+                                        <li><a href="">Footwear</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </span></li>
+                    <li class="navlinks"><span class="nav-hover-links"><i class="fas fa-laptop"></i> Electronics
+                            <div class="main-largedrpdown" id="clothing-drp-down">
+                                <div class="sub-categories">
+                                    <h3 class="sub-categories-heading">
+                                        Smartphones
+                                    </h3>
+                                    <ul class="categories-list">
+                                        <li><a href="/collection/smartphone">One Plus</a></li>
+                                        <li><a href="/collection/smartphone">Mi</a></li>
+                                        <li><a href="/collection/smartphone">Iphone</a></li>
+                                        <li><a href="/collection/smartphone">Realme</a></li>
+                                        <li><a href="/collection/smartphone">Samsung</a></li>
+                                    </ul>
+                                </div>
+                                <div class="sub-categories">
+                                    <h3 class="sub-categories-heading">
+                                        Television
+                                    </h3>
+                                    <ul class="categories-list">
+                                        <li><a href="">Phillips Tv</a></li>
+                                        <li><a href="">Samsung Tv</a></li>
+                                        <li><a href="">Sony Tv</a></li>
+                                        <li><a href="">Mi Tv</a></li>
+                                        <li><a href="">OnePlus Tv</a></li>
+
+                                    </ul>
+                                </div>
+                                <div class="sub-categories">
+                                    <h3 class="sub-categories-heading">
+                                        Headphones and speakers
+                                    </h3>
+                                    <ul class="categories-list">
+                                        <li><a href="">Headphones</a></li>
+                                        <li><a href="">Earphones</a></li>
+                                        <li><a href="">Soundbars</a></li>
+                                        <li><a href="">Speakers</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </span></li>
+                    <li class="navlinks"><a href="/cart" class="nav-hover-links" id="cart-link"><i
+                                class="fas fa-shopping-cart"></i> Cart</a></li>
+                                
+                    <li class="navlinks"><a href="/account" class="nav-hover-links" id="account-link"><i class="fas fa-user"></i> User</a></li>
+                    <li class="navlinks">
+                        <form action="" id="searchform"><input type="text" name="" id="searchbar"
+                                placeholder="Search"><button type="submit" id="search-btn"><i
+                                    class="fas fa-search w-low"></i></button></form>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+        <div id="media-division"></div>
+    </header>
+
+{% block Content %}
+
+{% endblock Content %}
+
+
+<footer id = "page-footer">
+<h1 class = "footer-head">
+<span class = "footer-logo"><img src="{% static 'icons/logo.svg'%}" alt="">Ecarte</span>
+<span style = "font-size: 17px; color: white;">Shrijan Shrivastava</span>
+</h1>
+<div class = 'footer-holder'>
+<div class="footer-subdiv">
+<h3>
+About us
+</h3>
+<div>
+This is a ecommerce website project developed by shrijan shrivastava. 
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae officiis alias quas dolorum sit voluptatum iste ut asperiores eum, voluptate labore mollitia molestiae necessitatibus eaque culpa error voluptates numquam earum.
+</div>
+
+</div>
+<div class="footer-subdiv">
+<h3>
+Special thanks
+</h3>
+<div>
+<ul>
+<li><a href="">Fontawesome</a> for icons</li>
+<li><a href="">Amazon</a> for images</li>
+<li><a href="">Flipkart</a> for images</li>
+<li><a href="">Nike</a> for images</li>
+<li><a href="">Addidas</a> for images</li>
+<li><a href="">Google</a> for images</li>
+ </ul>
+</div>
+
+</div>
+<div class="footer-subdiv">
+
+
+</div>
+</div>
+<h4 class= "footer-copyright">
+&copy; Copyright : All rights reserved 2020-2021
+</h4>
+</footer>
+</body>
+<script src=" {%static 'Script/app.js' %} "></script>
+</html>

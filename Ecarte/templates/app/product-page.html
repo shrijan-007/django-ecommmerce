@@ -1,0 +1,50 @@
+{% extends 'app/product-page-base.html' %}
+{% block prtitle %}
+{{item.Item.Title}}
+{% endblock prtitle %}
+{% block prheadertitle %}
+{{item.Item.Title}}
+{% endblock prheadertitle %}
+{% block albumImages %}
+<button class="image-btn activate-img">
+ <img src="{{item.Item.product_image.url}}" alt="">
+</button>
+<button class="image-btn">
+<img src="{{item.Item.product_image01.url}}" alt="">
+</button>
+<button class="image-btn">
+<img src="{{item.Item.product_image02.url}}" alt="">
+</button>
+{% endblock albumImages %}
+{% block mainImage %}
+             <img src="{{item.Item.product_image.url}}" alt="">
+{% endblock mainImage %}
+{% block SP %}{{item.Item.SellPrice}} {% endblock SP %}
+
+
+{% block MRP %}{{item.Item.MRP}}{% endblock MRP %}
+{% block colors %}
+    <h3 class="color-options-heading">Available colors :</h3>
+            <div class="color-options">
+            {% for color in colors %}
+                <a href="/productdetails/{{color.Item.id}}" class="pr-color-link"><img src="{{color.Item.product_image.url}}" alt="">{{color.color}} </a>
+            {% endfor %}
+            </div>
+{% endblock colors %}
+{% block varients %}
+            
+{% endblock varients %}
+
+
+
+ {% block btngrp %}
+                <button class="add-to-cart">
+                    <img src="" alt=""> Add to Cart
+                </button>
+                <button class="buy-now">
+                    <img src="" alt=""> Buy Now
+                </button>
+{% endblock btngrp %}
+{% block prDescription %}
+        {{item.Item.description}}
+        {% endblock prDescription %}

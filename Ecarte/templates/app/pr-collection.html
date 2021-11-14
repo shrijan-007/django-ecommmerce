@@ -1,0 +1,73 @@
+{% extends 'app/base.html' %}
+{% block title %}{{title}}{% endblock title %} 
+{% block Content %}
+
+
+    <div class="js-el">
+        <h3 class="header-l prc-bighead" >
+            PRODUCTS / {{title}}
+        </h3>
+    </div>
+    <div class="filtercontainer" id="filtersection">
+        <div class="filterForm">
+            <ul class="filter-options">
+                <li>
+                    <label for="sortfilter">Sort by :</label>
+                    <select name="sort" id="sortfilter">
+                        <option value="lth"><a href="">price low to high</a> </option>
+                        <option value="htl"><a href="">price high to low</a> </option>
+                        <option value="nf"><a href="">newest first</a> </option>
+                        <option value="pop"><a href="">popularity</a> </option>
+                    </select>
+                </li>
+                <li>
+                    <span class="as-filter-btn" id = "btn-flt" onclick="togglefilterbar()">
+                        <i class="fas fa-sliders-h"></i> Filter 
+                        <div id= "filterbar" style="display: none;">
+                            <form action="">
+                            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero natus dolor, adipisci perspiciatis labore delectus. </div>
+                            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur facilis quod omnis tempora, esse quaerat. </div>
+                            <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et distinctio perferendis alias consectetur debitis inventore!</div>
+                            <button>Filter</button>
+                            </form>
+                        </div>
+                    </span>
+                    
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="collection-wrapper">
+    
+        {% for item in items %}
+        <div class="collection-card fadeInUp">
+            <div class="pr-img-wrapper">
+                {% if item.offer %} 
+                    <i class="fas fa-percentage offer-i"> Offer</i>
+                {% endif %}
+                </span>
+                <a href="/productdetails/{{item.id}}">
+                    <img src="{{item.product_image.url}}" alt="">
+                </a>
+            </div>
+            <div class="pr-desc-wrapper">
+                <span class="card-desc center-text"><a href="/productdetails/{{item.id}}">{{item.Title}}</a></span>
+                <span class="card-price center-text">{{item.SellPrice}} <i class="fas fa-rupee-sign"></i>
+                
+            </div>
+        </div>
+        {% endfor %}
+
+
+
+
+
+    </div>
+
+{% endblock Content %}
+
+
+</body>
+<script src="/script/app.js"></script>
+
+</html>
