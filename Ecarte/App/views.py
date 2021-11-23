@@ -1,8 +1,12 @@
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 from django.shortcuts import render
 from django.http import HttpResponse,request
 from App import models
 from App.models import Product, phones, shirts
 from django.views import View
+from . import forms
+from django.contrib import messages
 # Create your views here.
 
 def home(request):
@@ -23,8 +27,22 @@ def phone_collection(request):
 
 
 
-def account(request):
-    return HttpResponse("<h2 style = 'text-align:center; padding:12px 8px;'>Accounts</h2>")
+# def account(request):
+#     fm = forms.userRegistrationForm()
+#     return render(request,'app/registration.html',{'form':fm})
+
+class account(View):
+    def get(self,request):
+        fm = forms.userRegistrationForm()
+        return render(request,'app/registration.html',{'form':fm})
+    def post(self,request):
+        fm =forms.userRegistrationForm(request.POST)
+        if fm.is_valid():
+            fm.save()
+        
+        return render(request,'app/registration.html',{'form':fm})
+
+
 
 
 class prdetails(View):

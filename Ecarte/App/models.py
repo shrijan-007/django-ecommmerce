@@ -41,7 +41,7 @@ mobile_brands = [
 ]
 
 # Create your models here.
-class Users(models.Model):
+class Customer(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     Fname = models.CharField(max_length=20)
     Lname = models.CharField(max_length=20)

@@ -1,0 +1,32 @@
+{% extends 'app/base.html' %}
+{% block title %}
+Login
+{% endblock title %}
+{% block Content %}
+    <div class="reg-form-main">
+        <h2 class="header-l center-text">
+            <i class="fas fa-lock"></i> <span>Login</span> 
+        </h2>
+    </div>
+    <div class="reg-form-main" style="margin: 1rem auto;">
+        <form action="" method="post" class="reg-form log-form">
+            <p class="log-info">
+                Log in with your Ecarte account
+            </p>
+            <p class="reg-field-grp">
+                <label for="">Email</label>
+                <input type="email" id="mail-id">
+            </p>    
+            <p class="reg-field-grp">
+                <label for="">Password :</label>
+                <input type="password" id="pass1-id">
+            </p>
+            <p class="log-submit">
+                <input type="submit" value="Log In">
+            </p>
+        </form>
+        <p class="log-form">
+            Don't have an account yet ?&nbsp;<a href="RegForm.html" class="log-reg-link">Register here</a> 
+        </p>
+    </div>
+{% endblock Content %}

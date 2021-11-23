@@ -1,0 +1,26 @@
+{% extends 'app/base.html' %}
+{% block title %}
+Register
+{% endblock title %}
+{% block Content %}
+        <div class = "reg-form-main">
+        <h2 class="reg-form-head">
+            Register yourself
+        </h2>
+        <form action="" class = "reg-form" method = "POST">
+        {% csrf_token %}
+        {% for field in form %}
+        <p class="reg-field-grp">
+        {{field.label_tag}}
+        {{field}}
+        </p>
+        
+        {% endfor %}
+        <p class="reg-field-grp" style = "display: flex; justify-content: flex-end;">
+            <input type = "submit" value = "Submit"    style=" width: 50%;">
+        </p>
+        </form>
+    </div>
+</body>
+</html>
+{% endblock Content %}

@@ -1,11 +1,11 @@
 from typing import List
 from django.contrib import admin
 
-from App.models import Product, Users, laptops, phones, shirts
+from App.models import Customer, Product, laptops, phones, shirts
 
 # Register your models here.
-@admin.register(Users)
-class UsersModelAdmin(admin.ModelAdmin):
+@admin.register(Customer)
+class CustomerModelAdmin(admin.ModelAdmin):
     list_display = ['id','user','Fname','Lname','Address','State']
     
 @admin.register(Product)
