@@ -1,5 +1,6 @@
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
+# from django.contrib.auth.forms import UserCreationForm
+# from django.contrib.auth.models import User
+# from django.http.response import HttpResponseRedirect
 from django.shortcuts import render
 from django.http import HttpResponse,request
 from App import models
@@ -39,9 +40,9 @@ class account(View):
         fm =forms.userRegistrationForm(request.POST)
         if fm.is_valid():
             fm.save()
-        
-        return render(request,'app/registration.html',{'form':fm})
-
+            return render(request,'app/home.html',{'loggedIn':{'name':fm.cleaned_data['username']}})
+        else:
+            return render(request,'app/registration.html',{'form':fm})
 
 
 
