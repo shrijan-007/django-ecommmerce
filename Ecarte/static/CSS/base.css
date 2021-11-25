@@ -870,7 +870,15 @@ input[type = "submit"]:focus{
   box-shadow: 2px 2px 4px 0px #1c1b1b;
 }
 /* to here */
-
+.error-messages{
+  list-style: none;
+    color: red;
+    font-size: 13px;
+    padding: 0 0.4rem;
+    font-weight: 900;
+    background: #dad5d59e;
+    width: 50%;
+}
 .log-form{
   width: 90%;
   margin: auto;

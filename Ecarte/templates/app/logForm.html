@@ -9,24 +9,36 @@ Login
         </h2>
     </div>
     <div class="reg-form-main" style="margin: 1rem auto;">
+   
         <form action="" method="post" class="reg-form log-form">
+         {% csrf_token %}
             <p class="log-info">
                 Log in with your Ecarte account
             </p>
+            {% for fm in form %}
             <p class="reg-field-grp">
-                <label for="">Email</label>
-                <input type="email" id="mail-id">
-            </p>    
-            <p class="reg-field-grp">
-                <label for="">Password :</label>
-                <input type="password" id="pass1-id">
+                {{fm.label_tag}}
+                {{fm}}
             </p>
+            {% if fm.errors %}
+            <span class = "error-messages">
+            {% for error in fm.errors %}
+            {{error}}
+            {% endfor %}
+            </span>
+            {% endif %}
+            {% endfor %}
             <p class="log-submit">
                 <input type="submit" value="Log In">
             </p>
         </form>
+        <p>
+        {% if form.non_field_errors %}
+        {{non_field_errors}}
+        {% endif %}
+        </p>
         <p class="log-form">
-            Don't have an account yet ?&nbsp;<a href="RegForm.html" class="log-reg-link">Register here</a> 
+            Don't have an account yet ?&nbsp;<a href="/account" class="log-reg-link">Register here</a> 
         </p>
     </div>
 {% endblock Content %}

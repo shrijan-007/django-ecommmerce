@@ -7,12 +7,24 @@ Register
         <h2 class="reg-form-head">
             Register yourself
         </h2>
-        <form action="" class = "reg-form" method = "POST">
+        <form action="" class = "reg-form" method = "POST" novalidate>
         {% csrf_token %}
         {% for field in form %}
         <p class="reg-field-grp">
         {{field.label_tag}}
         {{field}}
+        {% if field.help_text %}
+        <p class="help">{{ field.help_text|safe }}</p>
+        {% endif %}
+
+        
+        {% if field.errors %}
+        <span class = "error-messages">
+        {% for error in field.errors %}
+        {{error}}
+        {% endfor %}
+        </span>
+        {% endif %}
         </p>
         
         {% endfor %}
@@ -20,6 +32,14 @@ Register
             <input type = "submit" value = "Submit"    style=" width: 50%;">
         </p>
         </form>
+        <p>
+        {% if form.non_field_errors %}
+        {{non_field_errors}}
+        {% endif %}
+        </p>
+        <p class="log-form">
+            Already have an account.&nbsp;<a href="/login" class="log-reg-link">Log In</a> 
+        </p>
     </div>
 </body>
 </html>
