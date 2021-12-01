@@ -16,8 +16,6 @@ Register
         {% if field.help_text %}
         <p class="help">{{ field.help_text|safe }}</p>
         {% endif %}
-
-        
         {% if field.errors %}
         <span class = "error-messages">
         {% for error in field.errors %}
@@ -38,7 +36,7 @@ Register
         {% endif %}
         </p>
         <p class="log-form">
-            Already have an account.&nbsp;<a href="/login" class="log-reg-link">Log In</a> 
+            Already have an account.&nbsp;<a href="/accounts/login" class="log-reg-link">Log In</a> 
         </p>
     </div>
 </body>

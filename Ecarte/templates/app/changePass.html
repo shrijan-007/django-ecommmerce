@@ -1,0 +1,54 @@
+{% extends 'app/Accountbase.html' %}
+
+{% block Userframe %}
+<h2 class="s-adr-head">
+Change your password
+</h2>
+
+{% if messages %}
+{% for message in messages %}
+<p class="success-message-display">
+{{message}}
+</p>
+{% endfor %}
+
+
+{% endif %}
+
+<form action="" class = "reg-form" method = "POST" novalidate>        
+    {% csrf_token %}
+    {% for field in form %}
+        <p class="reg-field-grp">
+        {{field.label_tag}}
+        {{field}}
+        {% if field.errors %}
+        <span class = "error-messages">
+        {% for error in field.errors %}
+        {{error}}
+        {% endfor %}
+        </span>
+        {% endif %}
+        </p>
+        
+        {% endfor %}
+        <p class="reg-field-grp" style = "display: flex; justify-content: flex-end;">
+            <input type = "submit" value = "Submit"    style=" width: 50%;">
+        </p>
+        {% if field.errors %}
+        {% for error in field.errors %}
+        <span class = "error-messages">
+        
+        {{error}}
+        
+        </span>
+        {% endfor %}
+        {% endif %}
+        </form>
+        <p>
+        {% if form.non_field_errors %}
+        {% for error in non_fiels_errors %}
+        {{error}}
+        {% endfor %}
+        {% endif %}
+</form>
+{% endblock Userframe %}

@@ -1,0 +1,30 @@
+{% extends 'app/Accountbase.html' %}
+{% load static %}
+{% block Userframe %}
+        <div class = "main-orders">
+            <div class="notice-display">
+                You don't have any ongoing orders.
+            </div>
+            <div class = "order-item">
+                <p class = "ordered-item-img"><img src="{% static 'images/gridimg1a.jpg' %}" alt=""></p>
+                <p class = "order-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, in!</p>
+                <p class = "no-of-items"> <b>Ordered :</b> 2</p>
+                <a href="/account/trackorder" class = "bl-link">Track Order</a>
+            </div>
+            <div class = "order-item">
+                <p class = "ordered-item-img"><img src="{% static 'images/gridimg1b.jpg' %}" alt=""></p>
+                <p class = "order-description">Lorem ipssum dolor sit amet consectetureos?</p>
+                <p class = "no-of-items"><b>Ordered :</b> 1</p>
+                <a href="/account/trackorder" class = "bl-link">Track Order</a>
+            </div>
+            <div class = "order-item">
+                <p class = "ordered-item-img"><img src="{% static 'images/gridimg2a.jpg' %}" alt=""></p>
+                <p class = "order-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                <p class = "no-of-items"><b>Ordered :</b> 10</p>
+                <a href="/account/trackorder" class = "bl-link">Track Order</a>
+            </div>
+        
+        </div>
+
+
+{% endblock Userframe %}

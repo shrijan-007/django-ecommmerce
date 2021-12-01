@@ -1,0 +1,87 @@
+{% extends 'app/Accountbase.html' %}
+{% load static %}
+{% block Userframe %}
+        
+<div class="user-profile-main">
+<div id = "profile-display">
+<p class = "profile-img-holder">
+<img src="{% static 'icons/userprofile.png' %}" alt="">
+</p>
+<p class="username-holder">
+@{{user.username}}
+</p>
+</div>
+<div id = "user-email-div">
+{{user.email}}
+</div>
+
+<h2 class="s-adr-head">
+Saved Address
+</h2>
+
+<div class = "Current-addresses">
+{% if customer %}
+{% for cust in customer %}
+<a href="" class = "addresses-link">
+<span class="block-address">
+<b class = 'name' style = "color:black;">
+{{cust.Fname}}&nbsp;{{cust.Lname}}
+</b>
+</span>
+<span class="block-address">
+{{cust.PhoneNo}}
+</span>
+<span class="block-address">
+{{cust.Address}}
+</span>
+<span class="block-address">
+{{cust.State}}
+</span>
+<span class="block-address">
+{{cust.Pincode}}
+</span>
+</a>
+
+{% endfor %}
+{% else %}
+<h3 class = "notice-display">
+You have no saved Address
+</h3>
+
+{% endif %}
+</div>
+<h2 class="s-adr-head">
+Ongoing orders
+</h2>
+<div class = "flex-order-list">
+<div class = "ordered-column">
+    <span>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </span>
+</div>
+</div>
+
+<h2 class="s-adr-head">
+Payment methods
+</h2>
+<div class="payment-methods">
+<ul class = "payment-grps-list">
+<li class = "payment-grps">
+UPI
+</li>
+<li class = "payment-grps">
+VISA
+</li>
+<li class = "payment-grps">
+NET BANKING
+</li>
+<li class = "payment-grps">
+MASTERCARD
+</li>
+<li class = "payment-grps">
+RUPAY
+</li>
+</ul>
+</div>
+</div>
+{% endblock Userframe %}      

@@ -1,0 +1,31 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}
+    User
+{% endblock title %}
+{% block Content %}
+
+<div class="user-main">
+    <div class="user-navigation">
+        <ul class="user-links-list">
+            <li class="active">
+                <a href="/account/" class="user-nav-links">User</a>
+            </li>
+            <li>
+                <a href="/account/orders" class="user-nav-links">Orders</a>
+            </li>
+            <li>
+                <a href="/customerAddress/" class="user-nav-links">Address</a>
+            </li>
+            <li>
+                <a href="/account/changepassword" class="user-nav-links">Change Password</a>
+            </li>
+        </ul>
+    </div>
+    <div class="user-frame">
+        {% block Userframe %}
+        
+        {% endblock Userframe %}
+    </div>
+</div>
+{% endblock Content %}

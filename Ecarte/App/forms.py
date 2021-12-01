@@ -1,7 +1,9 @@
 from django import forms
+from django.contrib.auth import models
 from django.contrib.auth.forms import UserCreationForm,PasswordChangeForm,PasswordResetForm,AuthenticationForm, UsernameField
 from django.contrib.auth.models import User
 from django.forms.widgets import TextInput
+from .models import States_choice
 
 # from django.forms import fields
 # from django.forms.models import _Labels
@@ -25,3 +27,32 @@ class loginForm(AuthenticationForm):
         strip=False,
         widget=forms.PasswordInput(attrs={'autocomplete': 'current-password'}),
     )
+
+class customers_Adress(forms.Form):
+    fname = forms.CharField(label="First Name")
+    lname = forms.CharField(label="Last Name")
+    phoneNo = forms.IntegerField(label="Phone No.")
+    address = forms.CharField(label="Address")
+    state = forms.ChoiceField(label = "State",choices=States_choice, required=True)
+    pincode = forms.CharField(label = "Pincode",max_length=10)
+
+class changeUserPass(PasswordChangeForm):
+    old_password = forms.CharField(
+        label=("Old password"),
+        strip=False,
+        widget=forms.PasswordInput(attrs={'autocomplete': 'current-password', 'autofocus': True}),
+    )
+    new_password1 = forms.CharField(
+        label=("New password"),
+        widget=forms.PasswordInput(attrs={'autocomplete': 'new-password'}),
+        strip=False,
+    )
+    new_password2 = forms.CharField(
+        label=("Confirm new password"),
+        strip=False,
+        widget=forms.PasswordInput(attrs={'autocomplete': 'new-password'}),
+    )
+    class Meta:
+        model = User
+
+        field_order = ['old_password', 'new_password1', 'new_password2']

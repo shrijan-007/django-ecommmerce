@@ -1,0 +1,88 @@
+{% extends 'app/Accountbase.html' %}
+{% load static %}
+
+{% block Userframe %}
+        <h2 class="s-adr-head">
+Saved Address
+</h2>
+
+<div class = "Current-addresses">
+{% if customer %}
+{% for cust in customer %}
+<span href="" class = "addresses-link">
+<span class="block-address">
+<b class = 'name' style = "color:black;">
+{{cust.Fname}}&nbsp;{{cust.Lname}}
+</b>
+</span>
+<span class="block-address">
+{{cust.PhoneNo}}
+</span>
+<span class="block-address">
+{{cust.Address}}
+</span>
+<span class="block-address">
+{{cust.State}}
+</span>
+<span class="block-address">
+{{cust.Pincode}}
+</span>
+<a href="" class = "abs-icons"><i class="fas fa-trash"></i></a>
+<a href="" class = "abs-icons editicon"><i class="fas fa-pen-square"></i></a>
+</span>
+
+{% endfor %}
+{% else %}
+<h3 class = "notice-display">
+You have no saved Address
+</h3>
+
+{% endif %}
+</div>
+<h2 class="s-adr-head">
+Add another Address
+</h2>
+
+{% if messages %}
+{% for message in messages %}
+<p class="success-message-display">
+{{message}}
+</p>
+{% endfor %}
+
+
+{% endif %}
+
+<form action="" class = "reg-form" method = "POST" novalidate>        
+    {% csrf_token %}
+    {% for field in form %}
+        <p class="reg-field-grp">
+        {{field.label_tag}}
+        {{field}}
+        {% if field.errors %}
+        <span class = "error-messages">
+        {% for error in field.errors %}
+        {{error}}
+        {% endfor %}
+        </span>
+        {% endif %}
+        </p>
+        
+        {% endfor %}
+        <p class="reg-field-grp" style = "display: flex; justify-content: flex-end;">
+            <input type = "submit" value = "Submit"    style=" width: 50%;">
+        </p>
+        {% if field.errors %}
+        <span class = "error-messages">
+        {% for error in field.errors %}
+        {{error}}
+        {% endfor %}
+        </span>
+        {% endif %}
+        </form>
+        <p>
+        {% if form.non_field_errors %}
+        {{non_field_errors}}
+        {% endif %}
+</form>
+{% endblock Userframe %}
