@@ -13,6 +13,7 @@ from Ecarte.settings import MEDIA_ROOT, STATICFILES_DIRS
 urlpatterns = [
     path('',views.home,name='home'),
     path('cart',views.cart,name='cart'),
+    path("addtocart", views.add_to_cart, name="addtoCart"),
     path("account/", views.userArea, name="Account"),
     path("customerAddress/",views.address.as_view(),name = 'custaddress'),
     path("account/changepassword",views.set_newPass.as_view(),name = 'custChangePass'),

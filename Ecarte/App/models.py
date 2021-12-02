@@ -3,6 +3,8 @@ from django.db.models.base import Model
 from django.contrib.auth.models import User
 from django.db.models.fields import CharField
 from django.utils.regex_helper import Choice
+
+# from App.views import address
 States_choice = [
     ("Andhra Pradesh","Andhra Pradesh"),("Arunachal Pradesh ","Arunachal Pradesh "),("Assam","Assam"),("Bihar","Bihar"),("Chhattisgarh","Chhattisgarh"),("Goa","Goa"),("Gujarat","Gujarat"),("Haryana","Haryana"),("Himachal Pradesh","Himachal Pradesh"),("Jammu and Kashmir ","Jammu and Kashmir "),("Jharkhand","Jharkhand"),("Karnataka","Karnataka"),("Kerala","Kerala"),("Madhya Pradesh","Madhya Pradesh"),("Maharashtra","Maharashtra"),("Manipur","Manipur"),("Meghalaya","Meghalaya"),("Mizoram","Mizoram"),("Nagaland","Nagaland"),("Odisha","Odisha"),("Punjab","Punjab"),("Rajasthan","Rajasthan"),("Sikkim","Sikkim"),("Tamil Nadu","Tamil Nadu"),("Telangana","Telangana"),("Tripura","Tripura"),("Uttar Pradesh","Uttar Pradesh"),("Uttarakhand","Uttarakhand"),("West Bengal","West Bengal"),("Andaman and Nicobar Islands","Andaman and Nicobar Islands"),("Chandigarh","Chandigarh"),("Dadra and Nagar Haveli","Dadra and Nagar Haveli"),("Daman and Diu","Daman and Diu"),("Lakshadweep","Lakshadweep"),("National Capital Territory of Delhi","National Capital Territory of Delhi"),("Puducherry","Puducherry")
 ]
@@ -85,3 +87,8 @@ class laptops(models.Model):
     Brand = models.CharField(choices=laptops_brand,max_length=12)
     Storage = models.CharField(choices=[('128 GB','128 GB'),('256 GB','256 GB'),('512 GB','512 GB'),('1 TB','1 TB')],max_length=6)
     Storage_type = models.CharField(choices=[('SSD','SSD'),('HDD','HDD')], max_length=3)
+
+class Cart(models.Model):
+    customer = models.ForeignKey(User,on_delete=models.CASCADE)
+    cart_item = models.ForeignKey(Product,on_delete=models.CASCADE)
+    qty = models.PositiveIntegerField(default=1)

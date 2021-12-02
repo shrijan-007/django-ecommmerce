@@ -1,7 +1,8 @@
 from typing import List
 from django.contrib import admin
 
-from App.models import Customer, Product, laptops, phones, shirts
+from App.models import Customer, Product, laptops, phones, shirts,Cart
+
 
 # Register your models here.
 @admin.register(Customer)
@@ -23,3 +24,7 @@ class phonesModelAdmin(admin.ModelAdmin):
 @admin.register(laptops)
 class laptopsMOdelAdmin(admin.ModelAdmin):
     list_display = ['id','Item','Brand','Ram','Storage','Storage_type']
+
+@admin.register(Cart)
+class CartModelAdmin(admin.ModelAdmin):
+    list_display = ['id','customer','cart_item','qty']

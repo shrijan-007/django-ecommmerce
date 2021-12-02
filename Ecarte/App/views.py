@@ -2,10 +2,11 @@
 # from django.contrib.auth.models import User
 # from django.http.response import HttpResponseRedirect
 from django.contrib.auth.models import User
+from django.http.response import HttpResponseRedirect
 from django.shortcuts import render
 from django.http import HttpResponse,request
 from App import models
-from App.models import Product, phones, shirts,Customer
+from App.models import Product, phones, shirts,Customer,Cart
 from django.views import View
 from . import forms
 from django.contrib import messages
@@ -41,8 +42,10 @@ def userArea(request):
     else:
         return HttpResponse('<h1>NOT Authorized</h1>')
 
+
 def Cust_orders(request):
     return render(request,'app/userOrders.html')
+
 
 class set_newPass(View):
     def get(self,request):
@@ -58,6 +61,9 @@ class set_newPass(View):
         else:
             messages.warning(request,'something went wrong')
             return render(request,'app/changePass.html',{'form':fm})
+
+
+
 class account(View):
     def get(self,request):
         fm = forms.userRegistrationForm()
@@ -94,13 +100,29 @@ class address(View):
 
 
 class prdetails(View):
+    
     def get(self,request,pk):
         requested_product = Product.objects.filter(id = pk).get()
+        if request.user.is_authenticated:
+            temp_check_cart = Cart.objects.filter(cart_item = pk,customer = request.user.id)
         if requested_product.Category == "smartphone":
             item = phones.objects.filter(Item = pk).get()
             product_model = item.Item_model
             colors = phones.objects.filter(Item_model = product_model).filter(Ram = item.Ram).filter(Storage = item.Storage).distinct()
-            return render(request,'app/product-page.html',{'item':item,'colors':colors})
+            return render(request,'app/product-page.html',{'item':item,'colors':colors,'is_in_cart':temp_check_cart})
         if requested_product.Category == "shirt":
             item = shirts.objects.filter(Item = pk).get()
-            return render(request,'app/product-page.html',{'item':item,'title':'ss'})
+            return render(request,'app/product-page.html',{'item':item,'title':'ss','is_in_cart':temp_check_cart})
+
+# cart
+
+def add_to_cart(request):
+    if request.method == 'POST':
+        if request.user.is_authenticated:
+            prod = Product.objects.filter(id=request.POST.get('Prod-id')).get()
+            cust = User.objects.filter(id = request.user.id).get()
+            Cart.objects.create(customer = cust,cart_item = prod)
+
+            return HttpResponseRedirect(f'productdetails/{prod}')
+        else:
+            return HttpResponseRedirect('account/login')

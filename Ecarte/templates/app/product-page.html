@@ -38,12 +38,30 @@
 
 
  {% block btngrp %}
+
+ {% if is_in_cart %}
+ <span>
+     This item is already in your cart.
+ </span>
+ <a href = "/cart"class="add-to-cart" >
+    Go to Cart
+</a>
+<button class="buy-now">
+    Buy Now
+</button>
+
+{% else %}
+ <form action="/addtocart" method = "post">
+     {% csrf_token %}
+     <input type="hidden" name="Prod-id" value = {{item.Item.id}}>
                 <button class="add-to-cart">
-                    <img src="" alt=""> Add to Cart
+                    Add to Cart
                 </button>
                 <button class="buy-now">
-                    <img src="" alt=""> Buy Now
+                    Buy Now
                 </button>
+</form>
+{% endif %}
 {% endblock btngrp %}
 {% block prDescription %}
         {{item.Item.description}}
